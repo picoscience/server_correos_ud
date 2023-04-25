@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-%&ds86gikj^42vf4mluj840k5b=1kizr=n@0n@g8m3=ai7x!ho
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['3.144.165.18']
 
 
 # Application definition
@@ -122,3 +122,18 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+AWS_ACCESS_KEY_ID = 'AKIAVEK4GIHWK4XGTT5D'
+
+
+AWS_SECRET_ACCESS_KEY = 'Ne2YajDR86ljo0b+skn54ruB9yamc0sH1m4+OuvM'
+
+
+EMAIL_BACKEND = 'django_ses.SESBackend'
+
+
+AWS_SES_REGION_NAME = 'us-east-2'
+
+
+AWS_SES_REGION_ENDPOINT = 'email.us-east-2.amazonaws.com'
