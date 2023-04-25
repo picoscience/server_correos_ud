@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-%&ds86gikj^42vf4mluj840k5b=1kizr=n@0n@g8m3=ai7x!ho
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['3.144.165.18']
+ALLOWED_HOSTS = ['3.144.165.18','localhost','0.0.0.0']
 
 
 # Application definition
@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'udmail.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'database-uru-desarrollo.cno0bjpapi98.us-east-2.rds.amazonaws.com',
+        'PORT': '5432',
     }
 }
 

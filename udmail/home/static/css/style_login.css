@@ -751,17 +751,28 @@ ul.supp li {
 }
 
 .main_form .contactus {
-     padding: 0px 30px;
+     padding: 0px 20px;
      margin-bottom: 35px;
-     width: 100%;
+     width: 50%;
      height: 60px;
-     background: #fff;
-     color: #9192be;
+     color: #1b014e;
      font-size: 17px;
      font-weight: normal;
-     border-radius: 50px;
+     border-radius: 20px;
      border: #7381b1 solid 1px;
-     text-transform: uppercase;
+}
+
+.main_form .contactus1 {
+     resize: none;
+     padding: 15px 22px;
+     margin-bottom: 35px;
+     width: 100%;
+     height: 180px;
+     color: #1b014e;
+     font-size: 17px;
+     font-weight: normal;
+     border-radius: 20px;
+     border: #7381b1 solid 1px;
 }
 
 .main_form .textarea {
@@ -802,8 +813,8 @@ ul.supp li {
 }
 
 #request *::placeholder {
-     color: #9192be;
-     opacity: 1;
+     color: #1b014e;
+     opacity: 0.6;
 }
 
 

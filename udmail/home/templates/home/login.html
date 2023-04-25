@@ -55,7 +55,7 @@
                      <div class="collapse navbar-collapse" id="navbarsExample04">
                         <ul class="navbar-nav mr-auto">
                            <li class="nav-item active">
-                              <a class="nav-link" href="index.html">Home</a>
+                              <a class="nav-link" href="{% url 'home:index' %}">Home</a>
                            </li>
                            <li class="nav-item">
                               <a class="nav-link" href="https://www.udistrital.edu.co/inicio">UNIVERSITY</a>
@@ -69,7 +69,7 @@
                      <li><a href="Javascript:void(0)"> <i class="fa fa-user" aria-hidden="true"></i>
                         </a>
                      </li>
-                     <li><a href="{% url 'home:index' %}">Log In
+                     <li><a href="{% url 'home:index' %}">E-MAIL
                         </a>
                      </li>
                   </ul>
@@ -85,17 +85,18 @@
                <div class="col-md-12">
                   <div class="titlepage text_align_center">
                      <br><br><br>
-                     <h2>LOG <span class="blue_light">IN</span></h2>
+                     <h2>SEND <span class="blue_light">E-MAIL</span></h2>
                   </div>
                </div>
                <div class="col-md-10 offset-md-1">
                   <form id="request" class="main_form">
+                     {% csrf_token %}
                      <div class="row">
                         <div class="col-md-12 ">
-                           <input class="contactus" placeholder="Account" type="type" name=" Name"> 
+                           <input class="contactus" placeholder="Subject" name="subject" id="subject"> 
                         </div>
                         <div class="col-md-12">
-                           <input class="contactus" placeholder="Password" type="type" name="Phone Number">                          
+                           <textarea class="contactus1" placeholder="Message" name="message" id="message"></textarea>                        
                         </div>
                         <div class="col-md-12">
                            <button class="send_btn">Submit/button>
@@ -151,6 +152,31 @@
       <!-- Javascript files-->
       <script src="{% static 'js/jquery.min.js' %}"></script>
       <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script type="text/javascript">
+         $(document).on('submit', '#request', function(e){
+            e.preventDefault();
+            $.ajax({
+                  type: 'POST',
+                  url: '/send/',
+                  data: {
+                     subject : $('#subject').val(),
+                     message : $('#message').val(),
+                     csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]') .val()               
+                  },
+                  success: function(data) {
+                     console.log(data);
+                     alert('¡Correo enviado con éxito!');
+                  },
+                  error: function(xhr, textStatus, errorThrown) {
+                     console.log(xhr.responseText);
+                  }
+            });
+            /*aca*/
+            $('#subject').val('');
+            $('#message').val('');
+         });
+      </script>
       <!-- sidebar -->
       <script src="{% static 'js/custom.js' %}"></script>
    </body>

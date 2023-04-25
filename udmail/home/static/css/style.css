@@ -754,8 +754,7 @@ ul.supp li {
      padding: 0px 30px;
      margin-bottom: 35px;
      width: 100%;
-     height: 60px;
-     background: #fff;
+     height: 120px;
      color: #9192be;
      font-size: 17px;
      font-weight: normal;
@@ -763,6 +762,7 @@ ul.supp li {
      border: #7381b1 solid 1px;
      text-transform: uppercase;
 }
+
 
 .main_form .textarea {
      margin-bottom: 35px;
